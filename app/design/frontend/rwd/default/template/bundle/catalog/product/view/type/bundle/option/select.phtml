@@ -46,7 +46,7 @@
         <?php endif; ?>
         <input type="hidden" name="bundle_option[<?php echo $_option->getId() ?>]" value="<?php echo $_selections[0]->getSelectionId() ?>"/>
     <?php else:?>
-        <select onchange="bundle.changeSelection(this)" id="bundle-option-<?php echo $_option->getId() ?>" name="bundle_option[<?php echo $_option->getId() ?>]" class="bundle-option-<?php echo $_option->getId() ?><?php if ($_option->getRequired()) echo ' required-entry' ?> bundle-option-select change-container-classname">
+        <select onchange="bundle.changeSelection(this);alertSend()" id="bundle-option-<?php echo $_option->getId() ?>" name="bundle_option[<?php echo $_option->getId() ?>]" class="bundle-option-<?php echo $_option->getId() ?><?php if ($_option->getRequired()) echo ' required-entry' ?> bundle-option-select change-container-classname">
             <option value=""><?php echo $this->__('Choose a selection...') ?></option>
         <?php foreach ($_selections as $_selection): ?>
             <?php if ($_selection->getSelectionCanChangeQty() && $this->_isSelected($_selection)): ?>
@@ -62,3 +62,21 @@
         <label for="bundle-option-<?php echo $_option->getId() ?>-qty-input"><?php echo $this->__('Qty:') ?>&nbsp;</label><input onkeyup="bundle.changeOptionQty(this, event)" onblur="bundle.changeOptionQty(this, event)" <?php if (!$_canChangeQty) echo ' disabled="disabled"' ?> id="bundle-option-<?php echo $_option->getId() ?>-qty-input" class="input-text qty<?php if (!$_canChangeQty) echo ' qty-disabled' ?>" type="text" pattern="\d*" name="bundle_option_qty[<?php echo $_option->getId() ?>]" value="<?php echo $_defaultQty ?>"/>
     </span>
 </dd>
+
+<script type="text/javascript">
+    var e = document.getElementById("bundle-option-40");
+    var optionSelected = e.options[e.selectedIndex].text;
+
+    function alertSend(){
+        var e = document.getElementById("bundle-option-40");
+        var optionSelected = e.options[e.selectedIndex].text;
+        alert(optionSelected);
+    }
+
+    function alertSend2(){
+        var e = document.getElementById("select_25");
+        var optionSelected2 = e.options[e.selectedIndex].text;
+        alert(optionSelected2);
+    }
+
+</script>

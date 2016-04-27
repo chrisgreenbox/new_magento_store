@@ -26,7 +26,6 @@ if ($valuesHtml) { ?>
     <dl>
     <dt>
         <label><?php echo $this->htmlEscape($_option->getTitle()) ?><?php if ($_option->getIsRequire(true)): ?><span class="required">&nbsp;*</span><?php endif; ?></label>
-        <?php echo $helper->getOptionDescription($_option); ?>
     </dt>
     <dd<?php if ($_option->decoratedIsLast) { ?> class="last"<?php } ?>>
         <?php echo $valuesHtml ?>
@@ -58,3 +57,4 @@ if ($valuesHtml) { ?>
     <?php } ?>
 </div>
 <?php } ?>
+
