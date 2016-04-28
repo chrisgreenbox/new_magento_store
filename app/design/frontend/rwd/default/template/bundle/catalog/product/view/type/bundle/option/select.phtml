@@ -63,18 +63,28 @@
     </span>
 </dd>
 
+<?php $_option2 = $this->getOption(); ?>
+<h1><?php echo $_option->getId() ?></h1>
+<h1><?php echo $_option2->getId();?></h1>
+
 <script type="text/javascript">
-    var e = document.getElementById("bundle-option-40");
+    var bundleValOne = "<?php echo $_option->getId() ?>";
+    var bundleValOneID = "bundle-option-" + bundleValOne;
+
+    var bundleValTwo = "<?php echo $_option2->getId() ?>";
+    var bundleValTwoID ="select_" + bundleValTwo;
+
+    var e = document.getElementById(bundleValOneID);
     var optionSelected = e.options[e.selectedIndex].text;
 
     function alertSend(){
-        var e = document.getElementById("bundle-option-40");
+        var e = document.getElementById(bundleValOneID);
         var optionSelected = e.options[e.selectedIndex].text;
         alert(optionSelected);
     }
 
     function alertSend2(){
-        var e = document.getElementById("select_25");
+        var e = document.getElementById(bundleValTwoID);
         var optionSelected2 = e.options[e.selectedIndex].text;
         alert(optionSelected2);
     }

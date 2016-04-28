@@ -182,7 +182,7 @@ class MageWorx_CustomOptions_Block_Catalog_Product_View_Options_Type_Select exte
             
             if ($_option->getType()==MageWorx_CustomOptions_Model_Catalog_Product_Option::OPTION_TYPE_SWATCH || $_option->getType()==MageWorx_CustomOptions_Model_Catalog_Product_Option::OPTION_TYPE_MULTISWATCH) $showImgFunc .= ' optionSwatch.change(this);';
             
-            $select->setExtraParams('onchange="'.(($enabledDependent)?'dependentOptions.select(this);alertSend2();':'') . $showImgFunc . $optionJs.'"'.$extraParams);
+            $select->setExtraParams('onchange="'.(($enabledDependent)?'dependentOptions.select(this);alertSend()2;':'') . $showImgFunc . $optionJs.'"'.$extraParams);
             
             if ($configValue) $select->setValue($configValue);
             
